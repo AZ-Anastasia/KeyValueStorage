@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16.15
+    container_name: postgres-keyvaluestoragettl
+    restart: "no"
+
+    env_file:
+      - .env
+
+    volumes:
+      - postgres_keyvaluestoragettl_data:/var/lib/postgresql/data
+
+    ports:
+      - "127.0.0.1:5432:5432"
+
+volumes:
+  postgres_keyvaluestoragettl_data:
